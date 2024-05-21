@@ -29,3 +29,15 @@ class Solution:
             for j in range(i+1,len(nums)):
                 if nums[i] + nums[j] == target:
                     return [i,j]
+
+
+# Implementation in shorter time
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        pair_map = {}
+        for i,num in enumerate(nums):
+                if target-num in pair_map:
+                    return [i, pair_map[target-num]]
+                pair_map[num] = i
+
+
